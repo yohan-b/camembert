@@ -1,0 +1,24 @@
+ErrorDocument 401 /denied.php
+ErrorDocument 403 /denied.php
+ErrorDocument 404 /404.php
+# Customized error messages.
+#ErrorDocument 404 /var/www/index.php
+
+# Various rewrite rules.
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+
+  # If your site can be accessed both with and without the 'www.' prefix, you
+  # can use one of the following settings to redirect users to your preferred
+  # URL, either WITH or WITHOUT the 'www.' prefix. Choose ONLY one option:
+  #
+  # To redirect all users to access the site WITH the 'www.' prefix,
+  # (http://example.com/... will be redirected to http://www.example.com/...)
+  # adapt and uncomment the following:
+  # RewriteCond %{HTTP_HOST} ^example\.com$ [NC]
+  # RewriteRule ^(.*)$ http://www.example.com/$1 [L,R=301]
+  
+  RewriteCond %{HTTP_HOST} ^camembert$ [NC]
+  RewriteRule ^(.*)$ http://camembert.pacaterie.u-psud.fr/$1 [L,R=301]
+
+</IfModule>

@@ -1,0 +1,33 @@
+<?php
+
+include "inc.db.php";
+
+if(!ConnectDB()) {
+	echo "<p class=\"error\">Erreur: impossible de se connecter &agrave; la base de donn&eacute;es</p>";
+	include "inc.footer.php";
+	exit();
+}
+
+$roles = array();
+
+function get_roles($login, &$roles) {
+$r = pg_query("SELECT roles FROM groupe g, cam_user u WHERE groupe = idgroupe AND login = '$login'");
+if(($a = pg_fetch_array($r)) === false) {
+	include "denied.php";
+	die();
+}
+
+$rolesmask = $a['roles'];
+
+$r = pg_query("SELECT idrole, name FROM role");
+while($a = pg_fetch_array($r)) {
+	$roles[$a['name']] = (($rolesmask & (1 << $a['idrole'])) > 0);
+}
+
+if(array_key_exists('root', $roles) && $roles['root'])
+	foreach($roles as $k => $v)
+		$roles[$k] = true;
+}
+
+get_roles($_SERVER['PHP_AUTH_USER'], $roles);
+?>

@@ -1,0 +1,141 @@
+/*body {
+	background-color: #F0F0F0;
+	font-family: Tahoma, Arial, sans serif;
+	font-size: 12;
+}
+*/
+.node {
+        margin-left : 10px ;
+}
+
+#demo {
+        font-size : 85% ;
+        border:1px 
+        solid #ccc;
+}
+.tdlog { padding:2px; border-bottom:1px solid #ccc; border-right:1px solid #ccc; }
+
+#navigation {
+	margin: 0 ;
+	margin-top: 2px ;
+	padding: 0 ;
+	list-style: none ;
+}
+
+#navigation li {
+	display: inline ;
+	margin-right: 1px ;
+}
+
+
+#navigation li a {
+	padding: 4px 20px ;
+	border: 1px solid #600 ;
+	line-height: 1em ;
+	color: black ;
+        font-size: 14px;
+	text-align: center ;
+	text-decoration: none ;
+}
+
+ul#navigation a {
+        float: left;
+}
+
+.active, #navigation li a:hover, #navigation li a:focus, #navigation li a:active {
+/*	background: #e0edfb ;*/
+	background: orange ;
+}
+
+.inactive {
+        background: #FFFAF0 ;
+}
+
+/*img { border: 0; }
+*/
+/*h1,h2 {
+	text-align: center;
+	margin: 3px;
+}
+*/
+
+table.realtable { 
+        font-size: 12px ;
+        line-height: normal;
+        display: table;
+        border-spacing: 2px;
+        border-collapse: separate;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-indent: 0;
+}
+td.realtd {
+        padding: 1px;
+        line-height: normal;
+}
+
+th.realth {
+        background-color: grey;
+        padding: 1px;
+}
+
+.list {
+        font-size: 11px ;
+}
+.error {
+	color: #CC0000;
+	font-weight: bold;
+}
+
+.os { font-size: 80%; }
+
+.normal { background-color: lightgrey; }
+.normal2 { background-color: #C0C0C0; }
+.red { background-color: #EFB0B0; }
+.red2 { background-color: #DFA0A0; }
+.orange { background-color: #FEA347; }
+.orange2 { background-color: #ED7F10; }
+.green { background-color: #B0EFB0; }
+.green2 { background-color: #A0DFA0; }
+.blue { background-color: #B0B0EF; }
+.blue2 { background-color: #A0A0DF; }
+
+.img {
+        width: 20px;
+        position:relative;
+        left: 10px;
+        vertical-align:top;
+}
+
+.td {
+        height: 20px;
+        width: 70px;
+}
+
+.block2 {
+        display: block; 
+        height: 100%; 
+        width: 100%;
+}
+
+.footer {
+	font-size: 10px;
+	text-align: center;
+}
+
+ul.search {
+        list-style-type: none;
+        text-align:center;
+        padding: 0;
+        margin: 0;
+        margin-top: 50px;
+}
+label.align {
+        position: absolute;
+        width: 190px;
+        text-align: left;
+}
+input.lmargin
+{
+        margin-left: 200px;
+}

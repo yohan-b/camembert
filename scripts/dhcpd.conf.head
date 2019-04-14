@@ -1,0 +1,36 @@
+ddns-update-style none;
+authoritative;
+log-facility daemon;
+
+option wpad-url code 252 = string;
+#option auto-proxy-config code 252 = string;
+
+subnet 172.17.22.0 netmask 255.255.254.0 {
+	ddns-update-style none;
+	option domain-name "pacaterie.u-psud.fr";
+	option domain-name-servers 172.17.22.7; # , dns2.dns.u-psud.fr;
+	default-lease-time 43200;
+	max-lease-time 86400;
+	authoritative;
+	option routers 172.17.22.6;
+	option subnet-mask 255.255.254.0;
+	option broadcast-address 172.17.23.255;
+	#option netbios-name-servers wins.pacaterie.u-psud.fr;
+	#option netbios-node-type 8;
+	#option wpad-url code 252 = text;
+	option wpad-url "http://wpad.pacaterie.u-psud.fr/wpad.dat";
+	#option auto-proxy-config "http://172.17.22.3/proxy.pac";
+	deny unknown-clients;
+}
+
+subnet 172.17.24.0 netmask 255.255.255.0 {
+}
+
+group {
+	get-lease-hostnames on;
+
+# Serveur Cerbere pour Nagios
+	host cerbere {
+		hardware ethernet 00:0f:1f:64:81:e6;
+		fixed-address cerbere.pacaterie.u-psud.fr;
+	}
